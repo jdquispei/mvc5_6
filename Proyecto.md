@@ -5,9 +5,15 @@ Las empresas aeronáuticas para poder operar en sus respectivas actividades nece
 
 Casos de Uso:
 Registro de Personas Jurídicas
+
 Registro de Personas Naturales
+
 Registro de Contacto
+
 Registro Tipo Autorización
+
 Registro Giros
+
 Registro de Autorizaciones Aeronáuticas
+
 Registro de Registro de Certificación
