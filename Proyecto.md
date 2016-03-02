@@ -8,6 +8,6 @@ Registro de Personas Jurídicas
 Registro de Personas Naturales
 Registro de Contacto
 Registro Tipo Autorización
-Registro Tipo Certificaciones
+Registro Giros
 Registro de Autorizaciones Aeronáuticas
 Registro de Registro de Certificación
