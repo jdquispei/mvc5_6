@@ -1,0 +1,235 @@
+﻿@using UtilFactoria
+@using Entidades
+@model Entidades.T_GENM_PERSONA_JURIDICA
+@using System.Web.Mvc
+@{
+    ViewBag.Title = "PersonaJuridica";
+}
+
+@*@if (!Model.XPERSONAJURIDICA.Equals(" "))
+    {
+        <h3>Edición de Persona Jurídica</h3>
+    }
+    else
+    {
+        <h3>Registro de Persona Jurídica</h3>
+    }*@
+
+
+@Html.HiddenFor(model => model.XPERSONAJURIDICA, new { id = "XPERSONAJURIDICA" })
+
+<script src="~/Content/Scripts/Base/PersonaJuridica/js_PersonaJuridica.js"></script>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-primary">
+
+            @if (!Model.XPERSONAJURIDICA.Equals(" "))
+            {
+                @Html.Raw("<div class='panel-heading'><i class='fa fa-tasks fa'></i> Edición de Persona Jurídica </div> ")
+            }
+            else
+            {
+                @Html.Raw("<div class='panel-heading'><i class='fa fa-tasks fa'></i> Registro de Persona Jurídica </div> ")
+
+            }
+
+
+
+            <div class="panel-body">
+                <div class="panel-group" id="accordion">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="" data-toggle="collapse"
+                               href="#collapseDatos">
+                                <span class="indicador glyphicon glyphicon-chevron-up" aria-hidden="true"></span>  Datos principales
+                            </a>
+                        </div>
+                        <div style="height: auto;" id="collapseDatos" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                @Html.Partial("_EditarPersonaJuridica", Model)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @if (!Model.XPERSONAJURIDICA.Equals(" "))
+                {
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <a class="" data-toggle="collapse"
+                               href="#collapseTwo">
+                                <span class="indicador glyphicon glyphicon-chevron-down" aria-hidden="true"></span>  Contactos
+                            </a>
+                        </div>
+                        @if (Model.TIPO.Equals("Contacto"))
+                        {
+                            @Html.Raw("<div style='height: auto;' id='collapseTwo' class='panel-collapse collapse in'>")
+                        }
+                        else
+                        {
+                            @Html.Raw("<div style='height: auto;' id='collapseTwo' class='panel-collapse collapse'>")
+                        }
+                        <div class="panel-body">
+                            @using (Ajax.BeginForm("ListaContacto", "Contacto", new { Id_Persona_juridica = Model.XPERSONAJURIDICA },
+                    new AjaxOptions()
+                    {
+                        HttpMethod = "get",
+                        UpdateTargetId = "divContactos",
+                        InsertionMode = InsertionMode.Replace
+                    }, new { id = "frmContacto" }))
+                            {
+                                <div class="row form-horizontal">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            @*<div class="col-md-12">*@
+                                            <div class="col-xs-3">
+                                                <input type="text" id="txtfiltroNom" name="filtro_Nombre" class="form-control input-sm" placeholder="Búsqueda por Nombre">
+                                            </div>
+
+                                            <div class="col-xs-3">
+                                                <input type="text" id="txtfiltroApe" name="filtro_Apellidos" class="form-control input-sm" placeholder="Búsqueda por Apellidos">
+                                            </div>
+                                            <span class="input-group-btn">
+                                                <button type="submit"
+                                                        class="btn btn-default btn-sm"
+                                                        name="btnBuscar" value="btnBuscar">
+                                                    <span class="glyphicon glyphicon-search"></span>&nbsp;Buscar
+
+                                                </button>
+
+                                            </span>
+                                        </div>
+                                        @*</div>*@
+                                    </div>
+                                </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="divContactos">
+                                                @*@Html.Partial("~/Views/Contacto/_ListaContacto.cshtml", Model.ListaContacto)*@
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button type="button" title="Agregar nuevo Contacto"
+                                                    data-url="@Url.Action("Contacto", "Contacto", new { Contacto = " ", Id_Persona_juridica = Model.XPERSONAJURIDICA })"
+                                                    class="btn btn-primary btn-sm modalMTC">
+                                                <span class="glyphicon glyphicon-new-window"></span>  Agregar Contacto
+                                            </button>
+                                        </div>
+                                    </div>
+                            }
+                        </div>
+                        @Html.Raw("</div>")
+                    </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="" data-toggle="collapse"
+                                   href="#collapsethree">
+                                    <span class="indicador glyphicon glyphicon-chevron-down" aria-hidden="true"></span>  Autorizaciones
+                                </a>
+                            </div>
+                            @if (Model.TIPO.Equals("Autorizacion"))
+                            {
+                                @Html.Raw("<div style='height: auto;' id='collapsethree' class='panel-collapse collapse in'>")
+                            }
+                            else
+                            {
+                                @Html.Raw("<div style='height: auto;' id='collapsethree' class='panel-collapse collapse'>")
+                            }
+                            <div class="panel-body">
+                                @using (Ajax.BeginForm("ListaAutorizacion", "Autorizacion", new { Id_Persona_juridica = Model.XPERSONAJURIDICA, tipo_empresa = Model.XFLG_NACIONALIDAD, tipo_usuario = Model.XTIPO_USUARIO },
+                new AjaxOptions()
+                {
+                    HttpMethod = "get",
+                    UpdateTargetId = "divAutorizacion",
+                    InsertionMode = InsertionMode.Replace
+                }, new { id = "frmAutorizacion" }))
+                                {
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="divAutorizacion">
+                                                @*@Html.Partial("~/Views/Autorizacion/_ListaAutorizacion.cshtml", Model.ListaAutorizacion)*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            @if (Model.XTIPO_USUARIO.Equals("DGAC"))
+                                            {
+                                                <a href="@Url.Action("Autorizacion", "Autorizacion", new { Autorizacion = " ", Id_Persona_juridica = Model.XPERSONAJURIDICA, tipo_empresa = ViewData["XNACIONALIDAD_"], tipo_usuario = ViewData["XTIPO_USUARIO_"] })" class="btn btn-primary btn-sm" role="button">Agregar Autorizacion</a>
+
+                                                <!-- OPCION DE HISTORICOS -->
+                                                <button type="button" id="addNewHistoricos" class="btn btn-info"
+                                                        data-url="@Url.Action("ViewHistorico", "Autorizacion", new { PersonaNatural = Model.XPERSONAJURIDICA})">
+                                                    <span class="glyphicon glyphicon-hourglass"></span>  Ver historicos
+                                                </button>
+                                            }
+                                            @*<a href="@Url.Action("Autorizacion", "Autorizacion", new { Autorizacion = " ", Id_Persona_juridica = Model.XPERSONAJURIDICA, tipo_empresa = Model.XFLG_NACIONALIDAD })" class="btn btn-primary btn-sm" role="button">Agregar Autorizacion</a>*@
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            @Html.Raw("</div>")
+                        </div>
+                    if (Model.FLG_NACIONALIDAD == true)
+                    {
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <a class="" data-toggle="collapse"
+                                   href="#collapsefour">
+                                    <span class="indicador glyphicon glyphicon-chevron-down" aria-hidden="true"></span>  Certificaciones
+                                </a>
+                            </div>
+                            @if (Model.TIPO.Equals("Certificacion"))
+                            {
+                                @Html.Raw("<div style='height: auto;' id='collapsefour' class='panel-collapse collapse in'>")
+                            }
+                            else
+                            {
+                                @Html.Raw("<div style='height: auto;' id='collapsefour' class='panel-collapse collapse'>")
+                            }
+                            <div class="panel-body">
+                                @using (Ajax.BeginForm("ListaCertificacion", "Certificacion", new { Id_Persona_juridica = Model.XPERSONAJURIDICA, tipo_usuario = Model.XTIPO_USUARIO },
+                    new AjaxOptions()
+                    {
+                        HttpMethod = "get",
+                        UpdateTargetId = "divCertificacion",
+                        InsertionMode = InsertionMode.Replace
+                    }, new { id = "frmCertificacion" }))
+                                {
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div id="divCertificacion">
+                                                @*@Html.Partial("~/Views/Certificacion/_ListaCertificacion.cshtml", Model.ListaCertificacion)*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                @if (Model.XTIPO_USUARIO.Equals("DGAC"))
+                                                {
+                                                    <a href="@Url.Action("Certificacion", "Certificacion", new { Certificacion = " ", Id_Persona_juridica = Model.XPERSONAJURIDICA, tipo_usuario = ViewData["XTIPO_USUARIO_"] })" class="btn btn-primary btn-sm" role="button">Agregar Certificación</a>
+                                                }
+
+                                            </div>
+                                        </div>
+
+                                }
+                            </div>
+                            @Html.Raw("</div>")
+                        </div>
+                    }
+
+
+                }
+            </div>
+        </div>
+    </div>
+</div>

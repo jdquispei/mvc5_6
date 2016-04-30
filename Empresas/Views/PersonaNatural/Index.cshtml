@@ -1,0 +1,85 @@
+﻿
+<script src="~/Content/Scripts/Base/Persona_Natural/js_Index.js"></script>
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <i class="fa fa-tasks fa"></i>
+        Gestión De Persona Natural
+    </div>
+    <div class="panel-body">
+        <fieldset class="dhhBorder">
+            <legend class="dhhBorder"><strong>Criterios de Búsqueda</strong></legend>
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="form-horizontal">
+                        <div class="col-sm-5 col-md-5">
+                            <div class="form-group">
+                                <label class="col-sm-4 col-md-4 col-xs-4 control-label" for="Bus_Nombre">Nombre</label>
+                                <div class="col-sm-8 col-md-8 col-xs-8">
+                                    @Html.TextBox("Bus_Nombre", "", new { @class = "form-control", @maxlength = "200", @minlength = "3" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5 col-md-5">
+                            <div class="form-group">
+                                <label class="col-sm-4 col-md-4 col-xs-4 control-label" for="Bus_Ape_Paterno">Apellido Paterno</label>
+                                <div class="col-sm-4 col-md-8 col-xs-8">
+                                    @Html.TextBox("Bus_Ape_Paterno", "", new { @class = "form-control", @maxlength = "200", @minlength = "3" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5 col-md-5">
+                            <div class="form-group">
+                                <label class="col-sm-4 col-md-4 col-xs-4 control-label" for="descripcion_ing">Apellido Materno</label>
+                                <div class="col-sm-4 col-md-8 col-xs-8">
+                                    @Html.TextBox("Bus_Ape_Materno", "", new { @class = "form-control", @maxlength = "200", @minlength = "3" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5 col-md-5">
+                            <div class="form-group">
+                                <label class="col-sm-4 col-md-4 col-xs-4 control-label" for="Bus_Nro_Documento">Número Documento</label>
+                                <div class="col-sm-4 col-md-8 col-xs-8">
+                                    @Html.TextBox("Bus_Nro_Documento", "", new { @class = "form-control", @maxlength = "200", @minlength = "3" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button"
+                                class="btn btn-default btn-sm"
+                                name="btnBuscarPersonaNatural" id="btnBuscarPersonaNatural">
+                            <span class="glyphicon glyphicon-search"></span>&nbsp;Buscar
+                        </button> &nbsp;&nbsp;
+                        <button id="btnLimpiarPersonaNatural" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Limpiar</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </fieldset>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <a href="@Url.Action("PersonaNatural", "PersonaNatural", new { PersonaNatural = " " })" 
+                   class="btn btn-primary btn-sm" role="button">Registrar Persona Natural</a>
+                                
+                <button type="button" id="addModifyTipoHabilitacion" class="btn btn-primary btn-sm "
+                        data-url="@Url.Action("TipoHabilitacionLic", "TipoHabilitacionLic", new { })">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp; Modificar Tipo Habilitación
+                </button>
+                <p></p>
+                <div id="gridPersonaNatural">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+

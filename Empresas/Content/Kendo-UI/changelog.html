@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Changelog for Kendo UI v2014.3.1314</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: .75em/1.5 Tahoma, sans-serif;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-size: normal;
+        }
+
+        h2 {
+            font-size: 2em;
+            font-weight: normal;
+
+            margin: 1.2em 0 .3em;
+            padding-bottom: .2em;
+        }
+
+        #page {
+            width: 50em;
+            margin: 0 auto 2em;
+            border-radius: 0 0 1em 1em;
+            box-shadow: 0 0 10px #ccc;
+            padding: 1em 2em 2em;
+        }
+
+        .poBoxIcon {
+            float: left;
+            font-size: 2em;
+            margin: 1.2em .5em 0 0;
+        }
+
+        .poTopLine {
+            border-top: 2px solid #e1e1e1;
+            margin: 17px 0 40px 0;
+        }
+    </style>
+
+    <base href="http://www.telerik.com/support/whats-new/kendo-ui-web/release-history">
+</head>
+<body>
+    <div id="page">
+        <h1 class="title">Release notes for Kendo UI v2014.3.1314</h1>
+
+        <h1>Components</h1>
+        <div class="tClear poTopLine">
+            <div class="poBoxIconText">
+                <p><strong>What's new</strong></p><ul><li>CSRF tokens will be now included in the request to the PDF/Excel export proxy</li><li>Changed DateTimePicker default min date to 1800/01/01</li><li>Support multi-page PDF</li><li>Draw list bullets in HTML→PDF export</li></ul>
+                <p><strong>What's fixed</strong></p><ul><li>evalTemplate does not work when string is passed to the view</li><li>Windows Phone 8.1 update is not correctly parsed from kendo.support</li><li>Map controls are not styled correctly</li><li>TypeScript definitions missing for kendo.effects</li><li>TypeScript: Chart/StockChartSeriesItem.aggregate is listed as 'string', but should be 'any'</li><li>Radio button icons not aligned correct in Android 4.2.2</li></ul>
+            </div>
+        </div>
+
+
+        <div class="tClear poTopLine">
+            <h2>AngularJS</h2>
+            <p><strong>What's new</strong></p><ul><li>Auto sync Array and a widget DataSource in AngularJS application</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>the split-view and the view ng-controllers do not behave consistently</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Application</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>overlay:up transition does not work as expected</li><li>mobile application throws javascript error when native scrolling is enabled</li><li>reloading a remote view if an initial remote view is set results in JavaScript error</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>ButtonGroup</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>buttongroup last item border is missing</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Chart</h2>
+            <p><strong>What's new</strong></p><ul><li>Add legend.reverse configuration option</li><li>Improved bar chart animation speed</li><li>Enable pie charts to have a fixed diameter or fixed legend size</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Labels can't overlap series points (regression from internal build)</li><li>Plot bands are not visible when the axis is hidden</li><li>Distance between bars is non-uniform for dense charts</li><li>zIndex is not applied on spline area series</li><li>Pie chart with animations is not visible in IE 10</li><li>Bar charts might not render in IE10 (any mode)</li><li>Waterfall connecting segments are blurry</li><li>JavaScript error is thrown when legend.border.width is set and chart is empty</li><li>Errorbar only first value is taken into account when using a function for the value</li><li>Crosshairs are not hidden when moving the mouse out of the chart quickly</li><li>Incorrect bullet chart tooltip position when setting min or max value</li><li>Scatter points may be plotted at incorrect times when using date axis with set min/max</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>DataSource</h2>
+            <p><strong>What's new</strong></p><ul><li>fetch does not provide items in callback arguments</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Group parents not resolved correctly in SPA application</li><li>Fetch callback is called when requestStart is prevented</li><li>hasChanges method throws error due to the lazy ObservableObject initialization</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>DateTimePicker</h2>
+            <p><strong>What's new</strong></p><ul><li>Changed DateTimePicker default min date to 1800/01/01</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Entering date with keyboard and selecting time from the picker resets the widget value</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Diagram</h2>
+            <p><strong>What's new</strong></p><ul><li>Add mouseleave event for the Diagram widget</li><li>Add mouseenter event for the Diagram widget</li><li>Add support for clipped drawing elements for the shapes.</li><li>zoomStart event should be preventable</li><li>Add support for click and single element selection for touch devices.</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Shapes are not updated to reflect model changes (regression from internal builds)</li><li>Type is not applied to the diagram connections.</li><li>Incorrect Shape bounds when visual bounds do not start from zero</li><li>Connection toolBar should be disabled with empty array of tools</li><li>Shape toolBar should be disabled with empty array of tools</li><li>Diagram doesn't restore correctly with load()</li><li>Editing tool throw javascript exception if dataSource hasn't model</li><li>zoomMin doesn't set diagram min zoom</li><li>zoomMax doesn't set diagram max zoom</li><li>Diagram close button in the modal popup edit form trigger javascript error</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Draggable</h2>
+            <p><strong>What's new</strong></p><ul><li>Add hintDestroyed event that fires after hint destroy animation is completed</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Draggable element cannot be dragged in Chrome 39 on Win 8</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Drawing</h2>
+            <p><strong>What's new</strong></p><ul><li>Text is no longer wrapped in tspan elements</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>drawDOM ignores pseudo-elements added with :before and :after</li><li>Font names containing quotes are not applied for SVG rendering</li><li>Circle shapes with fractional radius are not correctly transformed in VML</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Editor</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Formats are not consolidated when there are inline formatted nodes inside range</li><li>Add k-checkbox-label class to the label in the Insert Hyperlink popup</li><li>Link continues in newly created list item</li><li>Replace deprecated Attr.nodeValue with Attr.value</li><li>Selection is not persisted when clicking outside of editor tools in IE</li><li>Tables are not inserted at correct position in IE 11</li><li>Checkbox is not visible in Editor hyperlink dialog</li><li>Inline format may break outside the selection if a wrapping element is suitable</li><li>TypeScript comilation reports duplicate identifiers when including jquery.d.ts</li><li>Created table is inserted at beginning of content in IE</li><li>Paragraph command duplicates content</li><li>Content is deleted in IE8 when inserting file URLs between words</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Excel Export</h2>
+            <p><strong>What's new</strong></p><ul><li>CSRF tokens will be now included in the request to the PDF/Excel export proxy</li><li>Support cell text wrapping</li><li>Provide the data in the excelExport event argument</li><li>Excel export supports foreign key columns</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Full list of aggregates is not available in column footerTemplate during export to Excel</li><li>Excel export doesn't use data set via the data source data() method</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Gantt</h2>
+            <p><strong>What's new</strong></p><ul><li>Task tooltip</li><li>Double tap on task should open Gantt advanced form under mobile devices</li><li>Current time marker for Gantt</li><li>Add messages options for "Start" and "End" strings inside the Resize tooltip</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Custom task fields are not updated when advanced edit template is used.</li><li>WeekView range not correct when last task ends on week start date</li><li>"Add Task" button in gantt's footer does not work.</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Globalization</h2>
+            <p><strong>What's new</strong></p><ul><li>About kendo.culture.fa.js and kendo.culture.fa-IR.js files</li></ul>
+            
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Grid</h2>
+            <p><strong>What's new</strong></p><ul><li>Provide the data in the excelExport event argument</li><li>Excel export supports foreign key columns</li><li>Row misalignment in InternetExplorer</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Moving a multiline header column with hidden child to a locked container does not work as expected</li><li>Header table doesn't have correct width after setDataSource</li><li>Sortable changes column order when initializing many columns from HTML in Chrome</li><li>Moving column with child levels to a non child level column does not work as expected</li><li>Grid content is not in sync with headers when locked columns are enabled on a mobile device</li><li>Error is thrown when grid restore state is used for hidden columns</li><li>Filter row gets duplicated when new dataSource is set</li><li>Grid resize() method should repaint the virtual scrollbar</li><li>Full list of aggregates is not available in column footerTemplate during export to Excel</li><li>Improve selectable performance with hidden elements</li><li>Grouping on field with space does not work</li><li>Incorrect aggregates are shown in groupFooterTemplate with multiple groups scenario</li><li>GroupHeaderTemplate is not rendered when multi-column headers are used</li><li>Column resizing does not work when detail template is set</li><li>setOptions creates new dataSource instance</li><li>Navigating to header in grid with horizontal scroll cause header misalignment</li><li>Date format is not supported in Excel 2007</li><li>Reordering columns while you have hidden column does not reorder headers</li><li>Hiding column while grid is not visible raises error</li><li>Using Excel export requires loading the kendo.treelist.js script (if not using a bundle)</li><li>Grid Excel export should depend on kendo.ooxml.js</li><li>The pdfExport event fires twice</li><li>GroupHeaderTemplate is not compiled against Angular</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>HierarchicalDataSource</h2>
+            <p><strong>What's new</strong></p><ul><li>Introduce Promise API for Node.load</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>id field is always serialized, even if not specified</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Linear Gauge</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Gauge pointer values are lost after redraw</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>ListView</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>DataItem method missing TypeScript definition</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Map</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>JavaScript errors and corrupt rendering when including kendo.dataviz.map.min.js in custom bundles</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>MaskedTextBox</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Widget shows selected empty mask on initial load in IE8</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Menu</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Inserting items does not work in IE7</li><li>Menu closes dropdownlist popup added to its content on touch devices</li><li>Widget loses last focused item in IE11</li><li>Disabled items get highlight effect when clicked in IE10</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>MobileListView</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>active listview item in iOS 7 (inset mode) is missing borders at the left side. </li><li>Pull to refresh + endless scrolling does not work if listview is empty</li><li>ListView position is reset between view navigation when endless scrolling is enabled</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>MobileView</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>When browser window is refreshed, show event is called multiple times</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>NavBar</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>iOS7 navbar title and buttons are not aligned</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>NumericTextBox</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Widget requires two taps in iOS8 to focus</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>PDF Export</h2>
+            <p><strong>What's new</strong></p><ul><li>CSRF tokens will be now included in the request to the PDF/Excel export proxy</li><li>The DejaVu font family is now bundled with Kendo UI for easier embedding in PDF files</li></ul>
+            
+        </div>
+        <div class="tClear poTopLine">
+            <h2>PanelBar</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>PanelBar triggers hover effects for nested TabStrip items</li><li>Inserting items does not work in IE7</li><li>panelbar does not work with declarative datasource</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>PivotGrid</h2>
+            <p><strong>What's new</strong></p><ul><li>Use the member caption instead of the name in order to display localized values</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Pivot FieldMenu does not destroy treeview widget</li><li>Widget does not work in IE 8</li><li>Widget cannot request data for root dimension</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>ProgressBar</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Progress status style is missing in material theme</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Radial Gauge</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Gauge pointer values are lost after redraw</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Scheduler</h2>
+            <p><strong>What's new</strong></p><ul><li>Support for "DTSTART/DTEND" values in recurrence rule if "\r\n" dividers are used</li><li>Adaptive Scheduler demo: Implement more effective way of switching views</li><li>Allow deselecting single events</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Scheduler "month" view throws error when initialized using MVVM</li><li>Widget does not allow to add events with pushCreate method</li><li>Timeline views doesn't support setting custom format on the dates header</li><li>Timeline month view name option is incorrect</li><li>Scheduler incorrectly exposes startTime/endTime properties to the event model</li><li>Wrapper's mousedown event prevents focusing elements</li><li>Editor is not shown on sequential add when edit event after adding new entry is canceled</li><li>Model validations are not applied to the Description and Resource editors</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>ScrollView</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>The dots of the ScrollView pager are cut off on iPhone</li><li>ScrollView does not work with remote transport and client size paging</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Scroller</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Release/refresh/pull templates not working for the mobile scroller</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Slider</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Slider should render large ticks when largeStep and smallStep are equal</li><li>Original value should be restored on form reset</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Sparkline</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>JavaScript error when hovering sparklines</li><li>Plot bands are not visible when the axis is hidden</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>SplitView</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>SplitView broken in Android (and WP 8)</li><li>the split-view and the view ng-controllers do not behave consistently</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Switch</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>.Enable() does not disable the Switch</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>TabStrip</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>TabStrip's setDataSource method doesn't accept array for dataSource</li><li>tabstrip does not support angularjs bindings with datasource</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>ToolBar</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Remove method does not remove separators</li><li>Remove method does not remove template items</li><li>Remove method does not remove SplitButton with overflow: "always"</li><li>Disabling overflow: "always" button through the API adds extra border </li><li>Attributes option does not work for ButtonGroup wrapper</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>TreeList</h2>
+            <p><strong>What's new</strong></p><ul><li>Click on expand/collapse button should not cause selection</li></ul>
+            <p><strong>What's fixed</strong></p><ul><li>Sorting and filtering do not work when initialized through MVVM</li><li>Footer template encodes html</li><li>columns.headerAttributes configuration option is missing</li><li>AngularJS templates in TreeList column are not re-rendered on setDataSource</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>TreeView</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>expandPath callback not executed if path contains leaf node</li><li>pushUpdate datasource changes remove sibling nodes</li><li>Expanded items are missing the data- and aria-expanded attributes when initializing from DataSource</li><li>Block elements in template generate a new scope in AngularJS</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Upload</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Upload AngularJS template is not compiled</li><li>Upload widget throws exception when multiple files dropped (multiple='false')</li><li>Upload button text moves on focus in IE</li><li>Remove event issue when multiple 'false' is set</li><li>Remove action is always displayed for initial files</li><li>Multiple 'false' does not work when remove action fails</li><li>Angular bindings are not evaluated within templates</li></ul>
+        </div>
+        <div class="tClear poTopLine">
+            <h2>Window</h2>
+            
+            <p><strong>What's fixed</strong></p><ul><li>Window should take into account the zoom level when maximized on touch devices</li></ul>
+        </div>
+    </div>
+</body>
+</html>

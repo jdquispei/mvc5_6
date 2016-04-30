@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Empresas", "Empresas\Empresas.csproj", "{FBEE37F8-AB6D-4BCF-958E-A0D8A6AA2EC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocios", "LogicaNegocios\LogicaNegocios.csproj", "{B6EAA1D0-2C97-43FD-87AA-CE6C940AF4D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{7D1DA071-F4C9-420A-A291-63E2EE09DE39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{13C6D5E2-3C37-4C56-9746-959A497480CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructura", "Infraestructura\Infraestructura.csproj", "{547542FE-62BA-4DA9-A494-F7303A09AC20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilFactoria", "UtilFactoria\UtilFactoria.csproj", "{5FA835A0-E962-4E00-B39A-90AE606E1E24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Utilitarios", "04 Utilitarios", "{930CA4E5-22E3-42C0-AE04-2692F88F04C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilesWeb", "UtilesWeb\UtilesWeb.csproj", "{5DA42F09-5BF1-4342-AADA-FF5B865B20D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBEE37F8-AB6D-4BCF-958E-A0D8A6AA2EC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBEE37F8-AB6D-4BCF-958E-A0D8A6AA2EC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBEE37F8-AB6D-4BCF-958E-A0D8A6AA2EC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBEE37F8-AB6D-4BCF-958E-A0D8A6AA2EC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6EAA1D0-2C97-43FD-87AA-CE6C940AF4D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6EAA1D0-2C97-43FD-87AA-CE6C940AF4D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6EAA1D0-2C97-43FD-87AA-CE6C940AF4D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6EAA1D0-2C97-43FD-87AA-CE6C940AF4D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D1DA071-F4C9-420A-A291-63E2EE09DE39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D1DA071-F4C9-420A-A291-63E2EE09DE39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D1DA071-F4C9-420A-A291-63E2EE09DE39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D1DA071-F4C9-420A-A291-63E2EE09DE39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13C6D5E2-3C37-4C56-9746-959A497480CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13C6D5E2-3C37-4C56-9746-959A497480CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13C6D5E2-3C37-4C56-9746-959A497480CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13C6D5E2-3C37-4C56-9746-959A497480CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{547542FE-62BA-4DA9-A494-F7303A09AC20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{547542FE-62BA-4DA9-A494-F7303A09AC20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{547542FE-62BA-4DA9-A494-F7303A09AC20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{547542FE-62BA-4DA9-A494-F7303A09AC20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FA835A0-E962-4E00-B39A-90AE606E1E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FA835A0-E962-4E00-B39A-90AE606E1E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FA835A0-E962-4E00-B39A-90AE606E1E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FA835A0-E962-4E00-B39A-90AE606E1E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA42F09-5BF1-4342-AADA-FF5B865B20D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA42F09-5BF1-4342-AADA-FF5B865B20D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA42F09-5BF1-4342-AADA-FF5B865B20D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA42F09-5BF1-4342-AADA-FF5B865B20D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5DA42F09-5BF1-4342-AADA-FF5B865B20D8} = {930CA4E5-22E3-42C0-AE04-2692F88F04C8}
+	EndGlobalSection
+EndGlobal

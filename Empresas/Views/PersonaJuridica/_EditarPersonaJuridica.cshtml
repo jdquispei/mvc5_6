@@ -1,0 +1,275 @@
+﻿@using Entidades;
+@model Entidades.T_GENM_PERSONA_JURIDICA
+
+@Html.HiddenFor(model => model.ID_PERSONA_JURIDICA, new { id = "ID_PERSONA_JURIDICA" })
+@Html.HiddenFor(model => model.ID_USUARIO_REG)
+@Html.HiddenFor(model => model.ID_USUARIO_ACT)
+@Html.HiddenFor(model => model.FEC_ACT)
+@Html.HiddenFor(model => model.FEC_REG)
+@Html.HiddenFor(model => model.XPERSONAJURIDICA, new { id = "XPERSONAJURIDICA" })
+@Html.HiddenFor(model => model.XTIPO_USUARIO, new { id = "XTIPO_USUARIO" })
+
+
+@Html.HiddenFor(model => model.XDEPARTAMENTO, new { id = "XDEPARTAMENTO" })
+@Html.HiddenFor(model => model.XPROVINCIA, new { id = "XPROVINCIA" })
+@Html.HiddenFor(model => model.XDISTRITO, new { id = "XDISTRITO" })
+
+
+<script src="~/Content/Scripts/Base/PersonaJuridica/js_EditarPersonaJuridica.js"></script>
+
+<div class="row form-horizontal">
+    <div class="col-sm-9 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.RUC, new { @class = "col-md-2 control-label small" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.RUC, new { @class = "form-control input-sm", placeholder = "Ingrese el RUC", maxlength = "11", @onkeypress = "return campoNumero(event)" })
+                @Html.ValidationMessageFor(model => model.RUC)
+            </div>
+            <div class="col-md-2">
+                <button id="btnBuscarPorRuc" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span>&nbsp; Buscar</button>
+            </div>
+            <div class="col-md-2">
+                <button id="btnCancelarPorRuc" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-repeat"></span>&nbsp; Limpiar</button>
+            </div>
+        </div>
+    </div>
+
+    @*<div class="col-sm-2 col-md-2">
+            <div class="form-group">
+                @Html.LabelFor(model => model.FLG_NACIONALIDAD, new { @class = "col-md-6 control-label small" })
+                <div class="col-md-6">
+                    @Html.CheckBoxFor(model => model.FLG_NACIONALIDAD)
+                </div>
+            </div>
+        </div>*@
+
+    @{
+        List<SelectListItem> listItems = new List<SelectListItem>();
+        listItems.Add(new SelectListItem
+        {
+            Text = "NACIONAL",
+            Value = "1",
+            Selected = true
+        });
+        listItems.Add(new SelectListItem
+        {
+            Text = "INTERNACIONAL",
+            Value = "0"
+
+        });
+    }
+
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.FLG_NACIONALIDAD, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.XFLG_NACIONALIDAD
+                                           , listItems, new { @class = "form-control input-sm selectpicker" })
+                @*@if (Model.XTIPO_USUARIO.Equals("DGAC"))
+                {
+                    @Html.DropDownListFor(model => model.XFLG_NACIONALIDAD
+                                           , listItems, new { @class = "form-control input-sm selectpicker" })
+                }
+                else {
+                    @Html.DropDownListFor(model => model.XFLG_NACIONALIDAD
+                                                    , listItems, new { @class = "form-control input-sm selectpicker", @disabled = "disabled" })
+                }*@
+
+            </div>
+        </div>
+
+        @*<div class="form-group" id="origen">
+            @Html.LabelFor(model => model.XPAIS_ORIGEN, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-6">
+                @Html.DropDownListFor(model => model.XPAIS_ORIGEN
+                                           , new SelectList((List<T_GENM_PAIS>)ViewBag.ListaPaisOrigen, "XPAIS_ORIGEN", "DESCRIPCION"), "[SELECCIONE]", new { @class = "form-control input-sm selectpicker" })
+
+            </div>
+        </div>*@
+
+    </div>
+
+
+
+
+</div>
+<div class="row form-horizontal">
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.RAZON_SOCIAL, new { @class = "col-md-2 control-label small" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.RAZON_SOCIAL, new { @class = "form-control input-sm", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.RAZON_SOCIAL)
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOMBRE_COMERCIAL, new { @class = "col-md-2 control-label small" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.NOMBRE_COMERCIAL, new { @class = "form-control input-sm", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.NOMBRE_COMERCIAL)
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row form-horizontal">
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DIRECCION, new { @class = "col-md-2 control-label small" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DIRECCION, new { @class = "form-control input-sm", @readonly = "readonly", @id = "DIRECCIONPJ" })
+                @Html.ValidationMessageFor(model => model.DIRECCION)
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DIRECCION_ALTERNATIVA, new { @class = "col-md-2 control-label small" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.DIRECCION_ALTERNATIVA, new { @class = "form-control input-sm", @maxlegth = 200 })
+                @Html.ValidationMessageFor(model => model.DIRECCION_ALTERNATIVA)
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="row form-horizontal">
+    @*<div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.XPAIS, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(model => model.XPAIS
+                                  , new SelectList((List<T_GENM_PAIS>)ViewBag.ListaPais, "XPAIS", "DESCRIPCION"), "[SELECCIONE]", new { @class = "form-control input-sm selectpicker" })
+
+            </div>
+        </div>
+    </div>*@
+
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DESC_DEPARTAMENTO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.DESC_DEPARTAMENTO, new { @class = "form-control input-sm", @readonly = "readonly", @id = "DESC_DEPARTAMENTO" })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DESC_PROVINCIA, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.DESC_PROVINCIA, new { @class = "form-control input-sm", @readonly = "readonly", @id = "DESC_PROVINCIA" })
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+
+<div class="row form-horizontal">
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DESC_DISTRITO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.DESC_DISTRITO, new { @class = "form-control input-sm", @readonly = "readonly", @id = "DESC_DISTRITO" })
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TELEFONO1, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.TELEFONO1, new { @class = "form-control input-sm", placeholder = "Ingrese Teléfono", @onkeypress = "return campoNumero(event)", @maxlength = 9 })
+                @Html.ValidationMessageFor(model => model.TELEFONO1)
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TELEFONO2, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.TELEFONO2, new { @class = "form-control input-sm", placeholder = "Ingrese Teléfono", @onkeypress = "return campoNumero(event)", @maxlength = 9 })
+                @Html.ValidationMessageFor(model => model.TELEFONO2)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row form-horizontal">
+
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.EMAIL, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.EMAIL, new { @class = "form-control input-sm", @type = "email", placeholder = "Ingrese E-Mail" })
+                @Html.ValidationMessageFor(model => model.EMAIL)
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.PAGINA_WEB, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.PAGINA_WEB, new { @class = "form-control input-sm", @type = "url", placeholder = "Ingrese Pagina Web" })
+                @Html.ValidationMessageFor(model => model.PAGINA_WEB)
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DESC_CONDICION, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.DESC_CONDICION, new { @class = "form-control input-sm", @readonly = "readonly", @id = "DESC_CONDICION" })
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row form-horizontal">
+    <div class="col-sm-4 col-md-4">
+        <div class="form-group">
+            @Html.LabelFor(model => model.FLG_ESTADO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.CheckBoxFor(model => model.FLG_ESTADO)
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row form-horizontal">
+    <div class="col-sm-12 col-md-12">
+        <div id="divError" class="alert alert-warning alert-dismissible" style="display: none">
+            <strong>No se puede grabar</strong>
+            <ul id="ulListaError"></ul>
+
+        </div>
+    </div>
+</div>
+<p>
+    <button id="btnGrabarAvance" type="button" class="btn btn-primary btn-sm">Guardar</button>
+    @Html.ActionLink("Cancelar", "Index", "PersonaJuridica", null, new { @class = "btn btn-default btn-sm" })
+
+    @*@if (Model.XTIPO_USUARIO.Equals("DGAC"))
+    {
+        @Html.ActionLink("Cancelar", "Index", "PersonaJuridica", null, new { @class = "btn btn-default btn-sm" })
+    }*@
+
+</p>
+

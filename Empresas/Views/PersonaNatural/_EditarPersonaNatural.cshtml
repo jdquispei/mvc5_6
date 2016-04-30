@@ -1,0 +1,209 @@
+﻿@using UtilFactoria
+@using Entidades;
+@model Entidades.T_GENM_PERSONA_NATURAL
+
+@{
+    string mensajeObligatorio = Variables.MensajeObligatorio;
+}
+
+@Html.HiddenFor(model => model.ID_PERSONA_NATURAL, new { id = "ID_PERSONA_NATURAL" })
+@Html.HiddenFor(model => model.ID_USUARIO_REG)
+@Html.HiddenFor(model => model.ID_USUARIO_ACT)
+@Html.HiddenFor(model => model.FEC_ACT)
+@Html.HiddenFor(model => model.FEC_REG)
+@Html.HiddenFor(model => model.XPERSONANATURAL, new { id = "XPERSONANATURAL" })
+
+
+
+<div class="row form-horizontal">
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.APELLIDO_PATERNO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.APELLIDO_PATERNO, new { @class = "form-control input-sm", @placeholder = mensajeObligatorio })
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.APELLIDO_MATERNO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.APELLIDO_MATERNO, new { @class = "form-control input-sm", @placeholder = mensajeObligatorio })
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row form-horizontal">
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOMBRE, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.NOMBRE, new { @class = "form-control input-sm", @placeholder = mensajeObligatorio })
+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.XID_TIPO_DOCUMENTO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.DropDownListFor(model => model.XID_TIPO_DOCUMENTO
+                         , new SelectList((List<T_MAE_TIPO_DOCUMENTO>)ViewBag.ListaTipoDocumento, "XTIPODOCUMENTO", "DESCRIPCION"), "[SELECCIONE]", new { @class = "form-control input-sm selectpicker", @data_width = "100%" })
+
+            </div>
+        </div>
+    </div>
+    @*<div class="col-sm-6 col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Estado_Civil, new { @class = "col-md-3 control-label small" })
+                <div class="col-md-9">
+                    @Html.DropDownListFor(model => model.Estado_Civil
+                                    , new SelectList((List<T_Mae_Maestras>)ViewBag.ListaEstadoCivil, "ID_MAESTRAS", "DESCRIPCION")
+                     , new { @class = "selectpicker", @data_width = "100%" })
+                    @Html.ValidationMessageFor(model => model.Estado_Civil)
+                </div>
+            </div>
+        </div>*@
+</div>
+
+<div class="row form-horizontal">
+
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.NUMERO_DOCUMENTO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.NUMERO_DOCUMENTO, new { @class = "form-control input-sm", @placeholder = mensajeObligatorio })
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.DIRECCION, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.DIRECCION, new { @class = "form-control input-sm", @placeholder = mensajeObligatorio })
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row form-horizontal">
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TELEFONO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.TELEFONO, new { @class = "form-control input-sm", @placeholder = mensajeObligatorio })
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TELEFONO_ADICIONAL, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.TELEFONO_ADICIONAL, new { @class = "form-control input-sm" })
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row form-horizontal">
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.CORREO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.CORREO, new { @class = "form-control input-sm", @type = "email", @placeholder = mensajeObligatorio })
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(model => model.FLG_ESTADO, new { @class = "col-md-3 control-label small" })
+            <div class="col-md-9">
+
+                @Html.CheckBoxFor(model => model.FLG_ESTADO)
+
+                @Html.ValidationMessageFor(model => model.FLG_ESTADO)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row form-horizontal">
+    <div class="col-sm-12 col-md-12">
+        <div id="divError" class="alert alert-warning alert-dismissible" style="display: none">
+            <strong>No se puede grabar</strong>
+            <ul id="ulListaError"></ul>
+        </div>
+    </div>
+</div>
+
+<p>
+    <button id="btnGrabarAvance" type="button" class="btn btn-primary btn-sm">Guardar</button>
+    @Html.ActionLink("Cancelar", "Index", "PersonaNatural", null, new { @class = "btn btn-default btn-sm" })
+</p>
+
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#btnGrabarAvance").click(function (e) {
+            bootbox.confirm("¿Desea grabar a la nueva persona?", function (res) {
+                if (res) {
+                    var oPersonaNatural = {
+                        ID_PERSONA_NATURAL: $("#ID_PERSONA_NATURAL").val(),
+                        XPERSONANATURAL: $("#XPERSONANATURAL").val(),
+                        NOMBRE: $("#NOMBRE").val(),
+                        APELLIDO_PATERNO: $("#APELLIDO_PATERNO").val(),
+                        APELLIDO_MATERNO: $("#APELLIDO_MATERNO").val(),
+                        XID_TIPO_DOCUMENTO: $("#XID_TIPO_DOCUMENTO").val(),
+                        NUMERO_DOCUMENTO: $("#NUMERO_DOCUMENTO").val(),
+                        TELEFONO: $("#TELEFONO").val(),
+                        DIRECCION: $("#DIRECCION").val(),
+                        CORREO: $("#CORREO").val(),
+                        FLG_ESTADO: $('#FLG_ESTADO').is(':checked') == true ? true : false,
+                        ID_USUARIO_REG: $("#ID_USUARIO_REG").val(),
+                        FEC_REG: $("#FEC_REG").val(),
+                        ID_USUARIO_ACT: $("#ID_USUARIO_ACT").val(),
+                        FEC_ACT: $("#FEC_ACT").val(),
+                        TELEFONO_ADICIONAL: $("#TELEFONO_ADICIONAL").val()
+                    };
+
+                    $.ajax({
+                        datatype: 'json',
+                        contentType: "application/json",
+                        url: '/PersonaNatural/SavePersonaNatural',
+                        type: 'POST',
+                        data: JSON.stringify({ oPersonaNatural: oPersonaNatural }),
+                        beforeSend: function () {
+
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (!data.rpta) {
+                                errorAddModelo("divError", "ulListaError", data.errores);
+                            } else {
+                                window.location = data.url;
+                            }
+                        }
+                    }).fail(function (jqxhr, textStatus, error) {
+                        var err = textStatus + ', ' + error;
+                        console.log("Request Failed: " + err);
+                    });
+
+                }
+            });
+        });
+
+
+    });
+</script>

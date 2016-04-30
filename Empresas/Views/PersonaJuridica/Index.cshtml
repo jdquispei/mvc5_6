@@ -1,0 +1,66 @@
+﻿
+<script src="~/Content/Scripts/Base/PersonaJuridica/js_Index.js"></script>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <i class="fa fa-tasks fa"></i>
+        Gestión de Persona Juridica
+    </div>
+    <div class="panel-body">
+        <fieldset class="dhhBorder">
+            <legend class="dhhBorder"><strong>Criterios de Búsqueda</strong></legend>
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <div class="form-horizontal">
+                        <div class="col-sm-5 col-md-5">
+                            <div class="form-group">
+                                <label class="col-sm-4 col-md-4 col-xs-4 control-label" for="Bus_Nombre">Ruc</label>
+                                <div class="col-sm-8 col-md-8 col-xs-8">
+                                    @Html.TextBox("Bus_Ruc", "", new { @class = "form-control", @maxlength = "200", @minlength = "3" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-5 col-md-5">
+                            <div class="form-group">
+                                <label class="col-sm-4 col-md-4 col-xs-4 control-label" for="Bus_Ape_Paterno">Razon Social</label>
+                                <div class="col-sm-4 col-md-8 col-xs-8">
+                                    @Html.TextBox("Bus_Razon_Social", "", new { @class = "form-control", @maxlength = "200", @minlength = "3" })
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button"
+                                class="btn btn-default btn-sm"
+                                name="btnBuscarPersonaJuridica" id="btnBuscarPersonaJuridica">
+                            <span class="glyphicon glyphicon-search"></span>&nbsp;Buscar
+                        </button> &nbsp;&nbsp;
+                        <button id="btnLimpiarJuridica" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Limpiar</button>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </fieldset>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <a href="@Url.Action("PersonaJuridica", "PersonaJuridica", new { PersonaNatural = " " })"
+                   class="btn btn-primary btn-sm" role="button">Registrar Persona Jurídica</a>
+
+                <button type="button" id="addModifyTipoHabilitacion" class="btn btn-primary btn-sm "
+                        data-url="@Url.Action("TipoHabilitacionLic", "TipoHabilitacionLic", new { })">
+                    <span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp; Modificar Persona Jurídica
+                </button>
+                <p></p>
+                <div id="gridPersonaJuridica">
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
